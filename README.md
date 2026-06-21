@@ -145,15 +145,10 @@ Risk areas to be careful with
 CTX supports multiple languages:
 
 English (en) - Default
-
 Portuguese (pt)
-
 Spanish (es)
-
 Russian (ru)
-
 Chinese (zh)
-
 Japanese (jp)
 
 Set language with:
@@ -778,28 +773,18 @@ ctx memory list --sort date --limit 10
 💡 Best Practices
 When to Add a Memory
 ✅ When you fix a bug
-
 ✅ When you learn something non-obvious
-
 ✅ When you make a significant decision
-
 ✅ When you encounter a tricky part of the code
-
 ✅ When you add a workaround
-
 ✅ When you discover a dangerous area
 
 Memory Writing Tips
 Be specific - Include exact file names and line numbers
-
 Explain why - Not just what happened, but why
-
 Include context - What were the conditions?
-
 Document solutions - How was it fixed?
-
 Add tags - Make it searchable
-
 Link to resources - Issues, PRs, discussions
 
 Example: Good Memory
@@ -827,20 +812,14 @@ description: "Fixed the thing"
 Create - Memory is added when issue discovered
 
 Update - Add more info as you learn
-
 Resolve - Mark as resolved when fixed
-
 Reference - Used in explain/impact commands
-
 Archive - Old memories can be archived
 
 🤖 AI Integration
 Memories are automatically used by AI when:
-
 Explaining files (ctx explain)
-
 Analyzing impact (ctx impact)
-
 Reviewing code (ctx review)
 
 The AI will warn you about related memories before you make similar mistakes.
@@ -856,21 +835,15 @@ ctx explain auth.go
 Good signs:
 
 ✅ Growing number of memories
-
 ✅ Decreasing bugs over time
-
 ✅ Active updates and resolutions
-
 ✅ Cross-referenced with decisions
 
 Warning signs:
 
 ❌ No memories (you're not learning)
-
 ❌ Only bugs (no lessons/warnings)
-
 ❌ Never resolved (issues linger)
-
 ❌ Outdated (no recent updates)
 
 text
@@ -1044,15 +1017,10 @@ ctx decision deprecate adr-023 \
 💡 Best Practices
 When to Create an ADR
 ✅ Choosing a technology (database, framework, etc.)
-
 ✅ Defining architecture patterns
-
 ✅ Making significant design decisions
-
 ✅ Changing existing decisions
-
 ✅ Rejecting alternatives
-
 ✅ Documenting non-negotiable requirements
 
 Good ADR Example
@@ -1102,21 +1070,15 @@ ctx memory add --type bug --title "Cache causes memory leak" --decision adr-001
 Good signs:
 
 ✅ Clear rationale for each decision
-
 ✅ Alternatives considered and documented
-
 ✅ Active decisions are implemented
-
 ✅ Deprecated decisions have replacements
 
 Warning signs:
 
 ❌ No decisions (random architecture)
-
 ❌ Decisions without rationale
-
 ❌ Never revisited or updated
-
 ❌ Contradictory decisions
 
 🤖 AI Integration
