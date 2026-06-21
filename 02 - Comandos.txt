@@ -1,0 +1,138 @@
+5. Rodar testes (opcional mas recomendado)
+powershell
+.\scripts\test.bat
+6. Criar o primeiro build
+powershell
+.\scripts\build.bat
+
+
+7. Testar o executável
+powershell
+.\bin\ctx-windows-amd64.exe version
+
+8. Instalar no sistema (opcional)
+powershell
+.\scripts\install.bat
+
+🎯 Testando o CTX
+Agora vamos testar se tudo funciona:
+
+Teste 1: Inicializar um projeto
+powershell
+mkdir test-project
+cd test-project
+ctx init
+Saída:
+
+text
+✅ CTX initialized successfully
+Teste 2: Criar um arquivo Go simples
+powershell
+@"
+package main
+
+func main() {
+    println("Hello, CTX!")
+}
+
+func login(email, password string) bool {
+    return email == "admin" && password == "secret"
+}
+"@ | Out-File -Encoding UTF8 main.go
+Teste 3: Scan do projeto
+powershell
+ctx scan
+Saída:
+
+text
+🔍 Scanning project...
+Found 1 Go files
+Analyzing dependencies...
+Scan complete. Updated 1 files
+
+📊 Statistics:
+  Files scanned:      1
+  New files:          1
+  Changed files:      0
+  Dependencies:       2
+  Memories:           0
+  Decisions:          0
+  Duration:           150ms
+Teste 4: Adicionar uma memória
+powershell
+ctx memory add --title "Primeiro teste" --type note --files main.go --tags test
+Teste 5: Explicar o arquivo
+powershell
+ctx explain main.go
+📦 Criando uma Release
+Quando estiver satisfeito com os testes:
+
+powershell
+.\scripts\release.bat
+Este comando:
+
+Pede a nova versão (ou usa a atual)
+
+Verifica mudanças não commitadas
+
+Roda todos os testes
+
+Build para todas as plataformas
+
+Gera checksums SHA256
+
+Cria release notes
+
+Coloca tudo na pasta release\
+
+Saída esperada:
+
+text
+🚀 CTX Release Script for Windows
+==================================
+
+📦 Current version: 0.1.0
+Enter new version (or press Enter to keep 0.1.0): 0.1.0
+
+🔍 Checking git status...
+✓ No uncommitted changes
+
+📁 Creating release directory...
+
+🧪 Running tests...
+...
+
+🔨 Building for all platforms...
+...
+
+🔐 Generating checksums...
+  ✓ ctx-windows-amd64.exe.sha256 generated
+  ✓ ctx-windows-386.exe.sha256 generated
+  ...
+
+📝 Creating release notes...
+✓ Release notes created
+
+📊 Release summary:
+====================
+ Directory of C:\Users\joao\ctx\release
+
+2026-02-26  10:35    <DIR>          .
+2026-02-26  10:35    <DIR>          ..
+2026-02-26  10:35        12,345,678 ctx-windows-amd64.exe
+2026-02-26  10:35                87 ctx-windows-amd64.exe.sha256
+2026-02-26  10:35        11,234,567 ctx-windows-386.exe
+2026-02-26  10:35                86 ctx-windows-386.exe.sha256
+2026-02-26  10:35        14,567,890 ctx-linux-amd64
+2026-02-26  10:35                83 ctx-linux-amd64.sha256
+2026-02-26  10:35        13,456,789 ctx-linux-arm64
+2026-02-26  10:35                84 ctx-linux-arm64.sha256
+2026-02-26  10:35        15,678,901 ctx-darwin-amd64
+2026-02-26  10:35                85 ctx-darwin-amd64.sha256
+2026-02-26  10:35        14,567,890 ctx-darwin-arm64
+2026-02-26  10:35                84 ctx-darwin-arm64.sha256
+2026-02-26  10:35             1,234 RELEASE_NOTES.md
+              13 File(s)     82,347,456 bytes
+
+✅ Release 0.1.0 prepared!
+Release files available in release\

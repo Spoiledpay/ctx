@@ -1,0 +1,10 @@
+# Ignorar pasta .agent
+.agent/
+
+# Build artifacts
+bin/
+*.exe
+
+# IDE
+.vscode/
+.idea/
