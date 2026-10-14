@@ -1,4 +1,16 @@
 markdown
+
+CTX
+The memory layer your AI coding agents are missing.
+
+AI agents write code faster than ever — but they're amnesiac. They don't know why a decision was made, what bugs already happened, or what was tried and failed. CTX fixes that.
+
+CTX is a source-code diary that stores decisions, bugs, and architectural context alongside your code, giving AI assistants (and your future self) the memory they need. It also orchestrates builds, correlates errors with historical fixes, and enforces architectural decisions before code is written — not after.
+
+Governance for the vibe code era. Because when 90% of developers use AI agents daily, someone has to make sure the code still makes sense.
+
+Status: CLI functional · Enterprise features in development · Sponsorship open 🚀
+
 # CTX Documentation
 
 Welcome to the CTX documentation! CTX is a source code diary that stores decisions, bugs, and context about your project, giving AI assistants (and your future self) the memory they need.
